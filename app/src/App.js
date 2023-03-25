@@ -1,7 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const App = () => {
 	const [count, setCount] = useState(0);
+
+	// Instead of componentDidMount and componentDidUpdate:
+	useEffect(() => {
+		document.title = `Clicked ${count} times`;
+	})
 
 	const increment = () => {
 		setCount(count + 1);
